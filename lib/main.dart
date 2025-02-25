@@ -5,24 +5,39 @@ void main () {
 
   runApp(
 MaterialApp(
-home: Scaffold(
-  appBar: AppBar(
- title: Text(
-   "My Second App"
- )
-  ),
-  body: Center(
-   child: Text(
-        "Hello Text Widget"
-    ),
-  ),
-    floatingActionButton: FloatingActionButton(
-        child: Text("Click"),
-    onPressed: () {
-
-    }
-    )
+home: Home()
 )
-)
-);
+  );
 }
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.blue.shade400,
+            title: Text(
+                "My Second App"
+            )
+        ),
+        body: Container(
+          color: Colors.grey[700],
+          padding: EdgeInsets.fromLTRB(10, 20, 20, 50),
+          margin: EdgeInsets.all(30),
+          child: Text(" Hello ")
+        ),
+
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.blue.shade400,
+            child: Text("Click"),
+            onPressed: () {
+
+            }
+        )
+    );
+  }
+}
+
+
