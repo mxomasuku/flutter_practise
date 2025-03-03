@@ -22,11 +22,21 @@ class Home extends StatelessWidget {
                 "My Second App"
             )
         ),
-        body: Container(
-          color: Colors.grey[700],
-          padding: EdgeInsets.fromLTRB(10, 20, 20, 50),
-          margin: EdgeInsets.all(30),
-          child: Text(" Hello ")
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+
+            Expanded(flex: 3, child: Image.asset("assets/jessica.jpg")),
+
+ Expanded(
+  flex: 1,
+    child: Container(padding: EdgeInsets.all(30.0), color: Colors.pinkAccent, child: Text("2")))
+            ,
+            Expanded(flex: 1, child: Container(padding: EdgeInsets.all(25.0), color: Colors.red, child: Text("3"))),
+            Expanded(flex: 1, child: Container(padding: EdgeInsets.all(20.0), color: Colors.cyan, child: Text("1")))
+
+          ],
         ),
 
         floatingActionButton: FloatingActionButton(
