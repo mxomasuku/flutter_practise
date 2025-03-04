@@ -10,44 +10,99 @@ home: Home()
   );
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  int codeLevel = 0;
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.blue.shade400,
-            title: Text(
-                "My Second App"
-            )
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      backgroundColor: Colors.grey[850],
+  appBar: AppBar(
+ title: Text("Mxolisi Masuku"),
+     backgroundColor: Colors.grey[400],
+    elevation: 0.0,
+  ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        setState(() {
+          codeLevel += 1;
+        });
+      },
+      child: Icon(Icons.add),),
+      body: Padding(
+          padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
 
-            Expanded(flex: 3, child: Image.asset("assets/jessica.jpg")),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/me.webp'),
+                radius: 80,
+              ),
+            ),
+Divider(height: 60, color: Colors.grey[600],),
+            Text("NAME",
+            style: TextStyle(
+              color: Colors.grey,
 
- Expanded(
-  flex: 1,
-    child: Container(padding: EdgeInsets.all(30.0), color: Colors.pinkAccent, child: Text("2")))
-            ,
-            Expanded(flex: 1, child: Container(padding: EdgeInsets.all(25.0), color: Colors.red, child: Text("3"))),
-            Expanded(flex: 1, child: Container(padding: EdgeInsets.all(20.0), color: Colors.cyan, child: Text("1")))
+              letterSpacing: 2.0
+            )),
+            SizedBox(height: 10.0),
+            Text("Mxolisi B Masuku",
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    fontSize: 22.0,
+                    letterSpacing: 2.0,
+                  fontWeight: FontWeight.bold
+                )),
+            SizedBox(height: 30.0),
 
-          ],
-        ),
+            Text("CURRENT LEVEL",
+                style: TextStyle(
+                    color: Colors.grey,
 
-        floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.blue.shade400,
-            child: Text("Click"),
-            onPressed: () {
+                    letterSpacing: 2.0
+                )),
+            SizedBox(height: 10.0),
+            Text("$codeLevel",
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    fontSize: 22.0,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold
+                )),
 
-            }
+            SizedBox(height: 30.0),
+            Row(
+              children: <Widget>[
+               Icon(Icons.email,
+               color: Colors.grey[400]),
+                SizedBox(width: 10.0,),
+                Text(
+                  "mxo.666@gmail.com",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18.0,
+                    letterSpacing: 1.0,
+                  )
+                )
+
+              ],
+            )
+          ]
         )
+      )
     );
   }
 }
+
 
 
