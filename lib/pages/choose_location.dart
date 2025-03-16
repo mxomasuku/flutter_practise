@@ -17,12 +17,27 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
   int counter = 0;
 
+  void getData () async {
+    //simulate a network request
+
+  String userName = await  Future.delayed(Duration(seconds: 1), () {
+     return "Mxolisi";
+    });
+
+   //simulate a network request
+    await Future.delayed(Duration(seconds: 1), () {
+      print(userName + " " + "is a happy man");
+     return userName + "Is a happy man";
+   });
+  }
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     print('init state function ran');
+    getData();
   }
 
 
